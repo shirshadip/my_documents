@@ -4,61 +4,66 @@
   <title>Password Protection</title>
   <meta charset="UTF-8">
   <style>
-    .title{
-        background-color: blanchedalmond;
-        padding: 30px;
-        border-radius: 5px;
-        border: 1px solid black;
-        text-align: center;
+    .title {
+      background-color: blanchedalmond;
+      padding: 30px;
+      border-radius: 5px;
+      border: 1px solid black;
+      text-align: center;
     }
-    .txtarea{
-        text-align: center;
-        margin-top: 20px;
-        background-color: rgb(255, 255, 255);
-        padding: 20px;
-        border-radius: 5px;
-        border: 1px solid black;
-        button{
-            height: 50px;
-            width: 200px;
-            border-radius: 5px;
-            border: 1px solid black;
-            background-color: lightgray;
-            cursor: pointer;
-
-        }
-        input{
-            height: 50px;
-            width: 500px;
-            border-radius: 5px;
-            border: 1px solid black;
-        }
-        
+    .txtarea {
+      text-align: center;
+      margin-top: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+    .txtarea button {
+      height: 50px;
+      width: 200px;
+      border-radius: 5px;
+      border: 1px solid black;
+      background-color: lightgray;
+      cursor: pointer;
+    }
+    .txtarea input {
+      height: 50px;
+      width: 500px;
+      border-radius: 5px;
+      border: 1px solid black;
     }
   </style>
 </head>
 <body>
-    <div class="title"> 
-        <h2>Enter Password</h2>
-    </div>
- 
- <div class="txtarea">
-     <input type="password" id="password" placeholder="Enter your password" height="50px" width="80px" ><br><br>
-  <button onclick="checkPassword()">Submit</button>
+  <div class="title"> 
+    <h2>Enter Password</h2>
+  </div>
 
- </div>
+  <div class="txtarea">
+    <input type="password" id="password" placeholder="Enter your password"><br><br>
+    <button onclick="checkPassword()">Submit</button>
+  </div>
+
   <script>
-    const correctPassword = "shirshadip1234"; // set your password here
+    const correctPassword = "shirshadip1234";
+    const backupPassword = "1234"; // optional second password
 
     function checkPassword() {
       const entered = document.getElementById("password").value;
-      if (entered === correctPassword) {
-        // Redirect to index.html
+      if (entered === correctPassword || entered === backupPassword) {
         window.location.href = "study.html";
       } else {
         alert("Incorrect password. Try again!");
       }
     }
+
+    // 🔑 Listen for Enter key press
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkPassword(); // Trigger password check
+      }
+    });
   </script>
 </body>
 </html>
