@@ -19,3 +19,23 @@
         border-radius: 24px;
     }
 }
+summary{
+    font-size: 22px;
+    color: rgb(112, 8, 8);
+    border: 2px solid black;
+    background: #0bc278;
+    padding:25px;
+    border-radius: 15px;
+
+    .files{
+        margin-top: 20px;
+        background: #f7ff05;
+        padding: 30px;
+        border-radius: 12px;
+        border: 2px solid black;
+        box-shadow: 3px 3px 3px gray;
+        font-size: 18px;
+        color: darkblue;
+    }
+
+}
